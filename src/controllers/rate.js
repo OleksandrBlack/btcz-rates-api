@@ -1,9 +1,9 @@
-const btczRates = require('../services/btczRates');
+const safeRates = require('../services/safeRates');
 const log = require('../lib/log');
 
 exports.list = (req, res, next) => {
-  log.debug('Pulling BTCZ Rate information from APIs');
-  btczRates.getAll().then((rates) => {
+  log.debug('Pulling SAFE Rate information from APIs');
+  safeRates.getAll().then((rates) => {
     res.json(rates);
   }).catch(next);
 };
